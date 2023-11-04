@@ -79,11 +79,11 @@
   <br>
   <br>
 
-  Conceptually, I'm interested in the relationship between biology and computation. How do biomolecular systems encode and process information? How can complex biological systems be represented and explored using silicon computers?
+  Conceptually, I'm interested in the relationship between biology and computation. How do biological systems encode and process information? How can complex biological systems be represented and explored using silicon computers?
   <br>
   <br>
 
-  More concretely, I've spent time thinking about chemical reaction network theory, DNA nanotechnology, single cell measurements, and high dimensional data.
+  More concretely, I've spent time thinking about chemical reaction networks, DNA barcodes, single cell measurements, and information measures.
 
   <br>
   <br>
@@ -97,17 +97,15 @@
 
   <h2><span style="font-style:normal">📚️✏️</span> selected work <span style="font-style:normal">🖍️📊</span></h2>
 
-  <h3>Interpretable representations, mutual information in high dimension, and  single cell data (coming soon!)</h3>
+  <h3>quantifying information flow in single cell data (coming soon!)</h3>
 
-  <p>Neural networks are really good at learning low-dimensional representations of single cell data [Lopez et al., 2019]. But the resulting dimensions are abstruse and hard to interpret biologically. In this thread of work, we explore separable integration (SI), a representation learning approach that allows us to prescribe concrete biological annotations for learned latent dimensions. We find that SI naturally yields a framework for analyzing the statistical dependence of cellular pathways, through a quantity we name separably integrated mutual information (SIMI).
-
-     With Pippa and Xiao-Kang, 
+  <p>It's clear that information flows through biological systems. Yet, quantitative descriptions of biological information flow from experimental data remain rare. One major reason is that estimating mutual information from high-dimensional, continuous, measurements is extremely hard. Here, we introduce a SIMI, method for measuring informativity in high-dimension, built on a bespoke autoencoder-like architecture that compresses high-dimensional variables into low-dimensional representations, while preserving mutually informative structure. We use SIMI to quantify information flow in a variety of single cell datasets.
 
   </p>
 
   <h3>de Bruijn graphs and DNA barcode design (in revision) [preprint][code][docs][interactive tool]</h3>
 
-  <p>How many orthogonal DNA barcodes can you make with a certain barcode length? Trying to estimate this with pen and paper led me to a graph theoretic formulation of the barcode design problem, and a simple and massively scalable algorithm for orthogonal sequence design fell out of it. In this paper, we establish an equivalence between sequence symmetry minimization and finding Hamiltonian paths in de Bruijn graphs, and then leverage a century of progress in discrete math to make SeqWalk, a fast sequence design method. SeqWalk can generate maximally sized sequence libraries under a given sequence symmetry constraint basically instantaneously. The extra surprising bit is that the core sequence design algorithm is incredibly concise -- our relaxed implementation takes less than 100 lines of Python.</p>
+  <p>How many orthogonal DNA barcodes can you make with a certain barcode length? In this paper, we establish an equivalence between sequence symmetry minimization and finding Hamiltonian paths in de Bruijn graphs. This yields a theoretical framework for determining ``upper bounds'' on orthogonal library size, and some neat tricks for quickly designing very large barcode libraries.</p>
 
   <h3>reversible computing with chemical reaction networks on a surface [pdf] [erik's commentary]</h3>
 
