@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>gokul gowri</title>
+	<meta charset="UTF-8">
+	<style>
+	 body {
+			 background-color: #fff3f0;
+			 color: #000000;
+			 font-family: Futura, "Trebuchet MS", Arial, sans-serif; font-size: 20px; font-style: italic; font-variant: normal; font-weight: 700; line-height: 24px;
+			 margin: 8px 12px 0 12px;
+	 }
+
+	 p {
+       font-size: 14px;
+			padding: 0;
+			margin: 0;
+		}
+
+		ul,
+		li {
+      font-size: 20px;
+			margin: 0;
+			padding: 3px;
+		}
+
+		ul.dashed {
+			list-style-type: none;
+		}
+
+		ul.dashed > li {
+			text-indent: 0px;
+		}
+
+		ul.dashed > li:before {
+			content: '\00a0\00a0';
+		}
+
+		a {
+			color: #025be0;
+			text-decoration: none;
+			border-bottom: 1px solid #025be0;
+		}
+
+   h1 {
+       font-size: 32px;line-height:40px;
+   }
+
+   h2 {
+       font-size: 28px;
+       margin: 0 0 0.2em 0;
+   }
+
+   hr {
+       height:5px;
+       background-color: #000000;
+       color: #000000;
+       margin: 0 0 0 0;
+       padding: 0 0 0 0;
+       border: 0;
+   }
+
+
+	</style>
+</head>
+
+<body>
+
+
+	<h1>gokul gowri thinks about biomolecules and bits</h1>
+
+  <br>
+
+  <h2><span style="font-style:normal">💽 🌿 </span> welcome <span style="font-style:normal"> 🌻 🧬</span></h2>
+  <br>
+
+  I'm a PhD student in the Molecular Systems lab at the Wyss Institute and Harvard Systems Biology.
+  <br>
+  <br>
+
+  Conceptually, I'm interested in the relationship between biology and computation. How do biological systems encode and process information? How can complex biological systems be represented and explored using silicon computers?
+  <br>
+  <br>
+
+  More concretely, I've spent time thinking about chemical reaction networks, DNA barcodes, single cell measurements, and information measures.
+
+  <br>
+  <br>
+  <a href="http://github.com/ggdna/">github</a></li> \\ <a href="https://scholar.google.com/citations?user=sJJAZjoAAAAJ&hl=en&oi=ao">google scholar</a> \\  <a href="https://last.fm/user/gokulgowri">last.fm</a>
+
+  <!-- this is the section break -->
+  <br>
+  <br>
+  <hr>
+  <br>
+
+  <h2><span style="font-style:normal">📚️✏️</span> selected work <span style="font-style:normal">🖍️📊</span></h2>
+
+  <h3>quantifying information flow in single cell data (coming soon!)</h3>
+
+  <p>It's clear that information flows through biological systems [Tkacik & Bialek, 2016]. Yet, quantitative descriptions of biological information flow from experimental data remain rare. One major reason is that estimating mutual information in high dimension is extremely hard. Here, we introduce a SIMI, method for measuring informativity in high-dimension, then use SIMI to quantify information flow in a variety of single cell datasets.
+
+  </p>
+
+  <h3>de Bruijn graphs and DNA barcode design (in revision) [preprint][code][docs][interactive tool]</h3>
+
+  <p>How many orthogonal DNA barcodes can you make with a certain barcode length? In this paper, we establish an equivalence between sequence symmetry minimization and finding Hamiltonian paths in de Bruijn graphs. This yields a theoretical framework for determining ``upper bounds'' on orthogonal library size, and some neat tricks for quickly designing very large barcode libraries.</p>
+
+  <h3>reversible computing with chemical reaction networks on a surface [pdf] [erik's commentary]</h3>
+
+  <p>Biological systems compute very energy efficiently, when compared to today's silicon chips [Boahen, 2022]. In this work, we explored architectures for chemical computers that could be much more energy efficient than traditional silicon ones. We present designs for feedforward digital logic circuits that use only physically reversible rearrangement reactions on a surface.</p>
+
+  <!-- this is the section break -->
+  <br>
+  <hr>
+  <br>
+	<p>this website is inspired by <a href="https://weiweihuanghuang.github.io/">wei huang</a>, <a href="https://online-ceramics.com/"> online ceramics</a>, <a href="https://www.dna.caltech.edu/"> caltech dna group</a>, <a href="https://www.sofie.info/"> sofie royer</a> .</p>
+
+  <br>
+
+  <!--
+
+  what i'm listening to: <br><br>
+
+
+  <img src="https://lastfm-recently-played.vercel.app/api?user=gokulgowri" height="auto" width="300px"/>
+
+</body>
+</html>
+
+-->
