@@ -12,9 +12,9 @@ b {
 
 a {
     color: #942ffa;
-    text-decoration: none;
     outline: 0;
     font-weight: 700;
+    text-decoration:  #942ffa dotted underline;
 }
 
 a:hover {
@@ -38,8 +38,8 @@ a:hover {
 
 .home_title {
     text-align: left;
-    font-size: 40px;
-    margin: 80px 0 30px 0;
+    font-size: 32px;
+    margin: 40px 0 20px 0;
     color: #000000db;
     font-weight: 600;
 }
@@ -61,7 +61,7 @@ a:hover {
 .title_menu {
     background-size: 100%;
     margin: 0px 0px 0px 0px;
-    padding: 80px 0 70px 0;
+    padding: 40px 0 40px 0;
 }
 
 .title_font {
@@ -73,16 +73,24 @@ a:hover {
 }
 
 .subtitle {
-    text-align: center;
+    text-align: left;
     font-size: 22px;
-    margin: 0;
-    color: #444;
-    line-height: 160%;
+    margin: 10px 0 10px 0;
+    color: #000;
+    line-height: 120%;
+    font-weight: 600;
 }
 
 .home_body {
-    font-size: 20px;
-    margin: 0 0 30px 0;
+    font-size: 16px;
+    margin: 0 0 10px 0;
+    line-height: 148%;
+    font-weight: 400;
+}
+
+.news_body {
+    font-size: 13px;
+    margin: 10px 0 10px 0;
     line-height: 148%;
     font-weight: 300;
 }
@@ -97,11 +105,12 @@ a:hover {
 
 
 hr {
-    width: 50%;
+    display: block;
     height: 1px;
-    border-color: #eee;
-    margin-bottom: 35px;
-    margin-top: 35px;
+    border: 0;
+    border-top: 2px dotted #000;
+    margin: 1em 0;
+    padding: 0;
 }
 
 
