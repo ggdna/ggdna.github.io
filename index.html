@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/nocturne-51b873ab-1d40-47ea-83cb-4bbcad7faa78/styles.css">
+<script src="_ds/nocturne-51b873ab-1d40-47ea-83cb-4bbcad7faa78/_ds_bundle.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+  body { margin: 0; background: #161826; color: #e9e9ed; font-family: "Inter", system-ui, sans-serif; }
+  a { color: #b5abfc; text-decoration: none; }
+  a:hover { color: #d2cefd; }
+  @keyframes dnaA { 0%,100% { transform: translateY(-92px) scale(1); opacity: 1 } 50% { transform: translateY(92px) scale(.5); opacity: .3 } }
+  @keyframes dnaB { 0%,100% { transform: translateY(92px) scale(.5); opacity: .3 } 50% { transform: translateY(-92px) scale(1); opacity: 1 } }
+  @keyframes dnaRung { 0%,50%,100% { transform: scaleY(1); opacity: .45 } 25%,75% { transform: scaleY(.02); opacity: .1 } }
+  @keyframes copyDown { 0% { opacity: 0; transform: translateY(34px) scale(1) } 10% { opacity: 1; transform: translateY(52px) scale(1.02) } 58% { opacity: 1; transform: translateY(176px) scale(1.16) } 70%,100% { opacity: 0; transform: translateY(176px) scale(1.16) } }
+  @keyframes segIn { 0%,56% { opacity: 0 } 64%,90% { opacity: 1 } 100% { opacity: 0 } }
+  @keyframes flyRight { 0%,10% { opacity: 1; transform: translate(0,0) scale(1) } 26% { opacity: .25; transform: translate(280px,0) scale(.82) } 27% { opacity: 0; transform: translate(0,0) scale(.9) } 38%,100% { opacity: 1; transform: translate(0,0) scale(1) } }
+  @keyframes colIn { 0% { opacity: 0; transform: translateX(-26px) } 10%,88% { opacity: 1; transform: translateX(0) } 100% { opacity: 0; transform: translateX(-26px) } }
+  @keyframes layerPulse { 0%,100% { box-shadow: 0 0 0 1px #3f424d } 50% { box-shadow: 0 0 0 1px #5d5294, 0 0 24px rgba(145,132,217,.18) } }
+  @keyframes srcGlow { 0%,10% { box-shadow: 0 0 0 1px #3f424d } 22%,80% { box-shadow: 0 0 0 1px #5d5294, 0 0 26px rgba(145,132,217,.16) } 92%,100% { box-shadow: 0 0 0 1px #3f424d } }
+</style>
+</helmet>
+
+<div style="min-height: 100vh; background: radial-gradient(1200px 620px at 78% -8%, #232532 0%, #161826 62%);">
+
+  <header style="display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 20px 56px; border-bottom: 1px solid rgba(233,233,237,.1);">
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <div style="display: flex; flex-direction: column; gap: 3px;">
+        <div style="width: 22px; height: 2px; background: #9184d9; border-radius: 2px;"></div>
+        <div style="width: 14px; height: 2px; background: #75798c; border-radius: 2px; margin-left: 8px;"></div>
+        <div style="width: 22px; height: 2px; background: #9184d9; border-radius: 2px;"></div>
+      </div>
+      <span style="font-size: 15px; font-weight: 500; letter-spacing: .01em;">DNA</span>
+      <span style="font-size: 12px; color: #75798c; border: 1px solid #3f424d; border-radius: 999px; padding: 2px 8px;">ggdna</span>
+    </div>
+    <nav style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px 20px; font-size: 14px; color: #b2b6ca; white-space: nowrap;">
+      <a href="#konzept" style="color: #b2b6ca;">{{ t.navWhat }}</a>
+      <a href="#fragmente" style="color: #b2b6ca;">{{ t.navDnas }}</a>
+      <a href="#kombination" style="color: #b2b6ca;">{{ t.navQuickstart }}</a>
+      <a href="#demo" style="color: #b2b6ca;">{{ t.navCombine }}</a>
+      <a href="#variablen" style="color: #b2b6ca;">{{ t.navVars }}</a>
+      <a href="#overrides" style="color: #b2b6ca;">{{ t.navOverrides }}</a>
+      <a href="#markdown" style="color: #b2b6ca;">{{ t.navMarkdown }}</a>
+      <a href="#skills" style="color: #b2b6ca;">{{ t.navSkills }}</a>
+      <a href="#vscode" style="color: #b2b6ca;">{{ t.navVscode }}</a>
+      <div style="display: flex; align-items: center; gap: 2px; border: 1px solid #3f424d; border-radius: 8px; padding: 3px; font-size: 13px;">
+        <button type="button" onClick="{{ setDe }}" style="border: 0; background: {{ deBg }}; color: {{ deFg }}; border-radius: 6px; padding: 5px 11px; font: inherit; cursor: pointer;">DE</button>
+        <button type="button" onClick="{{ setEn }}" style="border: 0; background: {{ enBg }}; color: {{ enFg }}; border-radius: 6px; padding: 5px 11px; font: inherit; cursor: pointer;">EN</button>
+      </div>
+      <a href="https://github.com/ggdna/dna_base" style="border: 1px solid #9184d9; color: #b5abfc; border-radius: 8px; padding: 7px 14px;">GitHub</a>
+    </nav>
+  </header>
+
+  <section style="display: grid; grid-template-columns: minmax(0,1fr) minmax(0,.95fr); gap: 56px; align-items: center; padding: 92px 56px 76px; max-width: 1440px;">
+    <div style="max-width: 620px;">
+      <div style="font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: #796cbf; margin-bottom: 22px;">DNA</div>
+      <h1 style="font-size: 62px; line-height: 1.04; font-weight: 500; margin: 0 0 24px; letter-spacing: -.02em; text-wrap: balance;">{{ t.heroTitle }}</h1>
+      <p style="font-size: 19px; line-height: 1.6; color: #b2b6ca; margin: 0 0 20px; max-width: 540px; text-wrap: pretty;">{{ t.heroBody }}</p>
+    </div>
+
+    <div style="position: relative; height: 300px; display: flex; align-items: center; justify-content: center; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 86%, transparent); mask-image: linear-gradient(90deg, transparent, #000 12%, #000 86%, transparent);">
+      <div style="position: absolute; width: 420px; height: 420px; border-radius: 50%; background: radial-gradient(circle, rgba(145,132,217,.16) 0%, transparent 68%);"></div>
+      <div style="display: flex; align-items: center; gap: 13px; position: relative;">
+        <sc-for list="{{ helix }}" as="c" hint-placeholder-count="24">
+          <div style="position: relative; width: 9px; height: 220px;">
+            <div style="position: absolute; left: 3.5px; top: 15px; width: 2px; height: 190px; background: linear-gradient(180deg, #5d5294, #595d6c); transform-origin: center; animation: dnaRung 3.4s ease-in-out infinite; animation-delay: {{ c.d }};"></div>
+            <div style="position: absolute; left: 0; top: 105px; width: 9px; height: 9px; border-radius: 50%; background: #9184d9; animation: dnaA 3.4s ease-in-out infinite; animation-delay: {{ c.d }};"></div>
+            <div style="position: absolute; left: 0; top: 105px; width: 9px; height: 9px; border-radius: 50%; background: #b2b6ca; animation: dnaB 3.4s ease-in-out infinite; animation-delay: {{ c.d }};"></div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="konzept" style="background: linear-gradient(180deg, #262a60, #1d2050); border-top: 1px solid #4c5397; border-bottom: 1px solid #4c5397; padding: 76px 56px 84px;">
+    <h2 style="font-size: 38px; font-weight: 500; margin: 0 0 14px; letter-spacing: -.01em; color: #f3f5fe;">{{ t.whatTitle }}</h2>
+    <p style="font-size: 17px; color: #b5afe8; margin: 0 0 44px; max-width: 660px;">{{ t.whatLead }}</p>
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; max-width: 1240px;">
+      <sc-for list="{{ verbs }}" as="v" hint-placeholder-count="4">
+        <div style="background: rgba(22,24,38,.5); border-radius: 8px; box-shadow: 0 0 0 1px #4c5397; padding: 24px 22px 26px; display: flex; flex-direction: column; gap: 10px;" style-hover="box-shadow: 0 0 0 1px #b5abfc, 0 0 30px rgba(145,132,217,.18);">
+          <div style="font-size: 21px; font-weight: 500; color: #f3f5fe; line-height: 1.3; display: flex; flex-direction: column;"><span>{{ v.title }}</span><span>{{ v.title2 }}</span></div>
+          <div style="font-size: 14.5px; line-height: 1.6; color: #b5afe8; text-wrap: pretty;">{{ v.body }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="fragmente" style="border-top: 1px solid #3f424d; border-bottom: 1px solid #3f424d; padding: 76px 56px 84px;">
+    <div style="max-width: 1240px;">
+      <h2 style="font-size: 38px; font-weight: 500; margin: 0 0 14px; letter-spacing: -.01em;">{{ t.dnasTitle }}</h2>
+      <p style="font-size: 17px; color: #75798c; margin: 0 0 40px; max-width: 640px;">{{ t.dnasLead }}</p>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;">
+        <sc-for list="{{ fragments }}" as="fr" hint-placeholder-count="6">
+          <div style="background: #232532; border-radius: 8px; box-shadow: 0 0 0 1px #3f424d; padding: 22px 24px;" style-hover="box-shadow: 0 0 0 1px #5d5294, 0 0 30px rgba(145,132,217,.14);">
+            <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 8px;">
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 17px; color: #b5abfc;">{{ fr.name }}</span>
+              <span style="font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: #595d6c;">{{ fr.tag }}</span>
+            </div>
+            <div style="font-size: 14.5px; line-height: 1.55; color: #9397ab;">{{ fr.body }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="kombination" style="background: linear-gradient(180deg, #262a60, #1d2050); border-top: 1px solid #4c5397; border-bottom: 1px solid #4c5397; padding: 76px 56px 84px;">
+    <h2 style="font-size: 38px; font-weight: 500; margin: 0 0 14px; letter-spacing: -.01em; color: #f3f5fe;">{{ t.qsTitle }}</h2>
+    <p style="font-size: 17px; color: #b5afe8; margin: 0 0 40px; max-width: 660px;">{{ t.qsLead }}</p>
+    <div style="max-width: 1240px; background: rgba(22,24,38,.5); border-radius: 8px; box-shadow: 0 0 0 1px #4c5397; overflow-x: auto; display: grid; grid-template-columns: max-content minmax(max-content, 1fr) minmax(max-content, 1fr);">
+      <div style="display: flex; flex-direction: column; padding: 0 30px;">
+        <div style="height: 52px; border-bottom: 1px solid #4c5397;"></div>
+        <sc-for list="{{ cli }}" as="c" hint-placeholder-count="8">
+          <div style="display: flex; align-items: center; gap: 14px; min-height: 68px; padding: 12px 0; border-bottom: 1px solid rgba(76,83,151,.4); white-space: nowrap;">
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #7972a9;">{{ c.n }}</span>
+            <span style="font-size: 16px; color: #f3f5fe; line-height: 1.4; white-space: nowrap;">{{ c.title }}</span>
+          </div>
+        </sc-for>
+      </div>
+      <div style="display: flex; flex-direction: column; background: rgba(145,132,217,.06); padding: 0 26px;">
+        <div style="height: 52px; display: flex; align-items: center; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: #9690c9; border-bottom: 1px solid #4c5397;">npm</div>
+        <sc-for list="{{ cli }}" as="c" hint-placeholder-count="8">
+          <div style="display: flex; align-items: center; min-height: 68px; padding: 12px 0; border-bottom: 1px solid rgba(76,83,151,.4); font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #d2cefd; white-space: nowrap;"><span style="color: #7972a9;">$&nbsp;</span>{{ c.npm }}</div>
+        </sc-for>
+      </div>
+      <div style="display: flex; flex-direction: column; background: rgba(181,171,252,.12); padding: 0 26px;">
+        <div style="height: 52px; display: flex; align-items: center; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: #9690c9; border-bottom: 1px solid #4c5397;">dart</div>
+        <sc-for list="{{ cli }}" as="c" hint-placeholder-count="8">
+          <div style="display: flex; align-items: center; min-height: 68px; padding: 12px 0; border-bottom: 1px solid rgba(76,83,151,.4); font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #d2cefd; white-space: nowrap;"><span style="color: #7972a9;">$&nbsp;</span>{{ c.dart }}</div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="demo" style="border-top: 1px solid #3f424d; border-bottom: 1px solid #3f424d; padding: 76px 56px 84px;">
+    <div style="max-width: 1240px;">
+      <h2 style="font-size: 38px; font-weight: 500; margin: 0 0 14px; letter-spacing: -.01em;">{{ t.demoTitle }}</h2>
+      <p style="font-size: 17px; color: #75798c; margin: 0 0 44px; max-width: 660px;">{{ t.demoLead }}</p>
+      <div style="display: grid; grid-template-columns: minmax(0,1fr) 84px minmax(0,1.25fr); gap: 20px; align-items: center;">
+        <div style="display: flex; flex-direction: column; gap: 18px;">
+          <sc-for list="{{ demoSources }}" as="s" hint-placeholder-count="2">
+            <div style="background: #232532; border-radius: 8px; padding: 20px 24px; font-family: 'JetBrains Mono', monospace; font-size: 14.5px; line-height: 1.85; color: #cfd3e5; animation: srcGlow 8s ease-in-out infinite; animation-delay: {{ s.d }};">
+              <div style="color: #b5abfc;">{{ s.name }}/</div>
+              <div><span style="color: #595d6c;">└─ </span>dna/doc/</div>
+              <div><span style="color: #595d6c;">&nbsp;&nbsp;&nbsp;└─ </span>{{ s.file }}</div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="display: flex; flex-direction: column; justify-content: space-around; height: 170px; align-items: center;">
+          <div style="display: flex; align-items: center; gap: 3px;">
+            <div style="width: 52px; height: 2px; background: linear-gradient(90deg, rgba(145,132,217,.3), #9184d9);"></div>
+            <div style="width: 0; height: 0; border-left: 8px solid #9184d9; border-top: 5px solid transparent; border-bottom: 5px solid transparent;"></div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 3px;">
+            <div style="width: 52px; height: 2px; background: linear-gradient(90deg, rgba(145,132,217,.3), #9184d9);"></div>
+            <div style="width: 0; height: 0; border-left: 8px solid #9184d9; border-top: 5px solid transparent; border-bottom: 5px solid transparent;"></div>
+          </div>
+        </div>
+        <div style="background: #232532; border-radius: 8px; box-shadow: 0 0 0 1px #5d5294; padding: 24px 28px; font-family: 'JetBrains Mono', monospace; font-size: 14.5px; line-height: 1.95; color: #cfd3e5;">
+          <div style="color: #b5abfc;">my_dna/</div>
+          <div><span style="color: #595d6c;">└─ </span>doc/</div>
+          <sc-for list="{{ demoOut }}" as="o" hint-placeholder-count="2">
+            <div style="white-space: nowrap;"><span style="color: #595d6c;">&nbsp;&nbsp;&nbsp;{{ o.branch }} </span>{{ o.file }}<span style="font-family: 'Inter', system-ui, sans-serif; font-size: 13px; color: #75798c; margin-left: 16px;">{{ o.from }}</span></div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="variablen" style="background: linear-gradient(180deg, #262a60, #1d2050); border-top: 1px solid #4c5397; border-bottom: 1px solid #4c5397; padding: 76px 56px 84px;">
+    <div style="max-width: 1240px;">
+      <h2 style="font-size: 38px; font-weight: 500; margin: 0 0 14px; letter-spacing: -.01em; color: #f3f5fe;">{{ t.varsTitle }}</h2>
+      <p style="font-size: 17px; line-height: 1.65; color: #b5afe8; margin: 0 0 44px; max-width: 700px; text-wrap: pretty;">{{ t.varsLead }}</p>
+      <div style="display: grid; grid-template-columns: minmax(0,1.25fr) 84px minmax(0,1fr); gap: 20px; align-items: center;">
+        <div style="display: flex; flex-direction: column; gap: 18px;">
+          <div style="background: rgba(22,24,38,.5); border-radius: 8px; box-shadow: 0 0 0 1px #4c5397; padding: 22px 26px; font-family: 'JetBrains Mono', monospace; font-size: 14.5px; line-height: 1.9; color: #d2cefd; white-space: nowrap;">
+            <div style="color: #7972a9; font-size: 13px;">dna/LICENSE</div>
+            <div>Copyright (c) <span style="color: #b5abfc;">dnaCopyrightHolder</span></div>
+          </div>
+          <div style="background: rgba(22,24,38,.5); border-radius: 8px; box-shadow: 0 0 0 1px #4c5397; padding: 22px 26px; font-family: 'JetBrains Mono', monospace; font-size: 14.5px; line-height: 1.9; color: #d2cefd; white-space: nowrap;">
+            <div style="color: #7972a9; font-size: 13px;">dna/_vars.json</div>
+            <div>{</div>
+            <div style="padding-left: 1.4em;"><span style="color: #b5abfc;">"dnaCopyrightHolder"</span>: <span style="color: #e7e5fe;">"ggdna"</span></div>
+            <div>}</div>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: center; gap: 3px;">
+          <div style="width: 52px; height: 2px; background: linear-gradient(90deg, rgba(181,171,252,.3), #b5abfc);"></div>
+          <div style="width: 0; height: 0; border-left: 8px solid #b5abfc; border-top: 5px solid transparent; border-bottom: 5px solid transparent;"></div>
+        </div>
+        <div style="background: rgba(22,24,38,.5); border-radius: 8px; box-shadow: 0 0 0 1px #4c5397; padding: 22px 26px; font-family: 'JetBrains Mono', monospace; font-size: 14.5px; line-height: 1.9; color: #d2cefd; white-space: nowrap;">
+          <div style="color: #7972a9; font-size: 13px;">{{ t.licInstantiated }}</div>
+          <div>Copyright (c) <span style="color: #f3f5fe;">ggdna</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="overrides" style="border-top: 1px solid #3f424d; border-bottom: 1px solid #3f424d; padding: 76px 56px 84px;">
+    <div style="max-width: 1240px;">
+      <h2 style="font-size: 38px; font-weight: 500; margin: 0 0 14px; letter-spacing: -.01em;">{{ t.ovTitle }}</h2>
+      <p style="font-size: 17px; line-height: 1.65; color: #9397ab; margin: 0 0 44px; max-width: 720px; text-wrap: pretty;">{{ t.ovLead }}</p>
+
+      <div style="font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: #796cbf; margin-bottom: 18px;">{{ t.ovReplaceLabel }}</div>
+      <div style="display: grid; grid-template-columns: minmax(0,1.25fr) 76px minmax(0,1fr); gap: 20px; align-items: center; margin-bottom: 46px;">
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <div style="background: #232532; border-radius: 8px; box-shadow: 0 0 0 1px #3f424d; padding: 20px 24px; font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 1.85; color: #cfd3e5; white-space: nowrap;">
+            <div style="color: #75798c; font-size: 12.5px;">dna_base · dna/scripts/release.sh</div>
+            <div style="color: #75798c; font-size: 13px;">{{ t.ovBaseRelease }}</div>
+          </div>
+          <div style="background: #232532; border-radius: 8px; box-shadow: 0 0 0 1px #3f424d; padding: 20px 24px; font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 1.85; color: #cfd3e5; white-space: nowrap;">
+            <div style="color: #75798c; font-size: 12.5px;">{{ t.yourLayer }} · dna/scripts/release.sh</div>
+            <div style="color: #75798c; font-size: 13px;">{{ t.ovYourRelease }}</div>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: center; gap: 3px;">
+          <div style="width: 48px; height: 2px; background: linear-gradient(90deg, rgba(145,132,217,.3), #9184d9);"></div>
+          <div style="width: 0; height: 0; border-left: 8px solid #9184d9; border-top: 5px solid transparent; border-bottom: 5px solid transparent;"></div>
+        </div>
+        <div style="background: #232532; border-radius: 8px; box-shadow: 0 0 0 1px #3f424d; padding: 20px 24px; font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 1.85; color: #cfd3e5; white-space: nowrap;">
+          <div style="color: #75798c; font-size: 12.5px;">{{ t.instantiated }} · scripts/release.sh</div>
+          <div style="color: #b5abfc; font-size: 13px;">{{ t.ovYourRelease }}</div>
+        </div>
+      </div>
+
+      <div style="font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: #796cbf; margin-bottom: 18px;">{{ t.ovMergeLabel }}</div>
+      <div style="display: grid; grid-template-columns: minmax(0,1.25fr) 76px minmax(0,1fr); gap: 20px; align-items: center; margin-bottom: 40px;">
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <div style="background: #232532; border-radius: 8px; box-shadow: 0 0 0 1px #3f424d; padding: 20px 24px; font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 1.85; color: #cfd3e5; white-space: nowrap;">
+            <div style="color: #75798c; font-size: 12.5px;">dna_base · dna/dot-vscode/settings.json</div>
+            <div>{ "editor.rulers": [80] }</div>
+          </div>
+          <div style="background: #232532; border-radius: 8px; box-shadow: 0 0 0 1px #3f424d; padding: 20px 24px; font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 1.85; color: #cfd3e5; white-space: nowrap;">
+            <div style="color: #75798c; font-size: 12.5px;">{{ t.yourLayer }} · dna/dot-vscode/settings<span style="color: #b5abfc;">.overrides</span>.json</div>
+            <div>{ "editor.tabSize": 2 }</div>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: center; gap: 3px;">
+          <div style="width: 48px; height: 2px; background: linear-gradient(90deg, rgba(145,132,217,.3), #9184d9);"></div>
+          <div style="width: 0; height: 0; border-left: 8px solid #9184d9; border-top: 5px solid transparent; border-bottom: 5px solid transparent;"></div>
+        </div>
+        <div style="background: #232532; border-radius: 8px; box-shadow: 0 0 0 1px #3f424d; padding: 20px 24px; font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 1.85; color: #cfd3e5; white-space: nowrap;">
+          <div style="color: #75798c; font-size: 12.5px;">{{ t.instantiated }} · .vscode/settings.json</div>
+          <div>{ "editor.rulers": [80],</div>
+          <div>&nbsp;&nbsp;"editor.tabSize": 2 }</div>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 18px;">
+        <sc-for list="{{ jsonOps }}" as="op" hint-placeholder-count="4">
+          <div style="background: #232532; border-radius: 8px; box-shadow: 0 0 0 1px #3f424d; padding: 20px 22px;">
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 15px; color: #b5abfc; margin-bottom: 8px;">{{ op.code }}</div>
+            <div style="font-size: 14px; line-height: 1.55; color: #9397ab;">{{ op.body }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="markdown" style="background: linear-gradient(180deg, #262a60, #1d2050); border-top: 1px solid #4c5397; border-bottom: 1px solid #4c5397; padding: 76px 56px 84px;">
+    <div style="max-width: 1240px;">
+      <h2 style="font-size: 38px; font-weight: 500; margin: 0 0 14px; letter-spacing: -.01em; color: #f3f5fe;">{{ t.mdTitle }}</h2>
+      <p style="font-size: 17px; line-height: 1.65; color: #b5afe8; margin: 0 0 44px; max-width: 740px; text-wrap: pretty;">{{ t.mdLead }}</p>
+      <div style="display: grid; grid-template-columns: minmax(0,1.25fr) 76px minmax(0,1fr); gap: 20px; align-items: center; margin-bottom: 40px;">
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <div style="background: rgba(22,24,38,.5); border-radius: 8px; box-shadow: 0 0 0 1px #4c5397; padding: 20px 24px; font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 1.85; color: #d2cefd; white-space: nowrap;">
+            <div style="color: #7972a9; font-size: 12.5px;">dna_guides · dna/doc/guides/develop.md</div>
+            <div style="color: #9690c9;">## <span style="color: #b5abfc;">@setup</span> Setup</div>
+            <div style="color: #9690c9;">Install via <span style="color: #b5abfc;">dnaPackageManager</span></div>
+          </div>
+          <div style="background: rgba(22,24,38,.5); border-radius: 8px; box-shadow: 0 0 0 1px #4c5397; padding: 20px 24px; font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 1.85; color: #d2cefd; white-space: nowrap;">
+            <div style="color: #7972a9; font-size: 12.5px;">{{ t.yourLayer }} · dna/_vars.json</div>
+            <div>{ <span style="color: #b5abfc;">"dnaPackageManager"</span>: <span style="color: #e7e5fe;">"npm"</span> }</div>
+          </div>
+          <div style="background: rgba(22,24,38,.5); border-radius: 8px; box-shadow: 0 0 0 1px #4c5397; padding: 20px 24px; font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 1.85; color: #d2cefd; white-space: nowrap;">
+            <div style="color: #7972a9; font-size: 12.5px;">{{ t.yourLayer }} · dna/doc/guides/develop<span style="color: #d2cefd;">.overrides</span>.md</div>
+            <div>## @setup Setup (company)</div>
+            <div style="color: #9690c9;">Use the company toolchain.</div>
+            <div style="color: #9690c9;">Install via dnaPackageManager</div>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: center; gap: 3px;">
+          <div style="width: 48px; height: 2px; background: linear-gradient(90deg, rgba(181,171,252,.3), #b5abfc);"></div>
+          <div style="width: 0; height: 0; border-left: 8px solid #b5abfc; border-top: 5px solid transparent; border-bottom: 5px solid transparent;"></div>
+        </div>
+        <div style="background: rgba(22,24,38,.5); border-radius: 8px; box-shadow: 0 0 0 1px #4c5397; padding: 20px 24px; font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 1.85; color: #d2cefd; white-space: nowrap;">
+          <div style="color: #7972a9; font-size: 12.5px;">{{ t.instantiated }} · doc/guides/develop.md</div>
+          <div style="color: #f3f5fe;">## Setup (company)</div>
+          <div style="color: #9690c9;">Use the company toolchain.</div>
+          <div style="color: #f3f5fe;">Install via pnpm</div>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 18px;">
+        <sc-for list="{{ mdOps }}" as="op" hint-placeholder-count="2">
+          <div style="background: rgba(181,171,252,.1); border-radius: 8px; box-shadow: 0 0 0 1px #6a6fb0; padding: 20px 22px;">
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 14.5px; color: #e7e5fe; margin-bottom: 8px;">{{ op.code }}</div>
+            <div style="font-size: 14px; line-height: 1.55; color: #c4bff0;">{{ op.body }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" style="border-top: 1px solid #3f424d; border-bottom: 1px solid #3f424d; padding: 76px 56px 84px;">
+    <div style="max-width: 1240px;">
+      <h2 style="font-size: 38px; font-weight: 500; margin: 0 0 14px; letter-spacing: -.01em;">{{ t.skillsTitle }}</h2>
+      <p style="font-size: 17px; line-height: 1.65; color: #9397ab; margin: 0 0 44px; max-width: 720px; text-wrap: pretty;">{{ t.skillsLead }}</p>
+      <div style="display: grid; grid-template-columns: minmax(0,1.25fr) 76px minmax(0,1fr); gap: 20px; align-items: center; margin-bottom: 40px;">
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <div style="background: #232532; border-radius: 8px; box-shadow: 0 0 0 1px #3f424d; padding: 20px 24px; font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 1.85; color: #cfd3e5; white-space: nowrap;">
+            <div style="color: #75798c; font-size: 12.5px;">dna_gg · dna/dot-claude/skills/</div>
+            <div>review-light/SKILL.md</div>
+            <div>review-heavy/SKILL.md</div>
+          </div>
+          <div style="background: #232532; border-radius: 8px; box-shadow: 0 0 0 1px #3f424d; padding: 20px 24px; font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 1.85; color: #cfd3e5; white-space: nowrap;">
+            <div style="color: #75798c; font-size: 12.5px;">{{ t.yourLayer }} · dna/dot-claude/skills/</div>
+            <div>release-notes/SKILL.md</div>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: center; gap: 3px;">
+          <div style="width: 48px; height: 2px; background: linear-gradient(90deg, rgba(145,132,217,.3), #9184d9);"></div>
+          <div style="width: 0; height: 0; border-left: 8px solid #9184d9; border-top: 5px solid transparent; border-bottom: 5px solid transparent;"></div>
+        </div>
+        <div style="background: #232532; border-radius: 8px; box-shadow: 0 0 0 1px #3f424d; padding: 20px 24px; font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 1.85; color: #cfd3e5; white-space: nowrap;">
+          <div style="color: #75798c; font-size: 12.5px;">{{ t.instantiated }} · .claude/skills/</div>
+          <div style="color: #b5abfc;">review-light/SKILL.md</div>
+          <div style="color: #b5abfc;">review-heavy/SKILL.md</div>
+          <div style="color: #b5abfc;">release-notes/SKILL.md</div>
+        </div>
+      </div>
+      <div style="background: #1b1d2b; border-radius: 8px; box-shadow: 0 0 0 1px #3f424d; padding: 22px 26px; font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 1.85; color: #cfd3e5; max-width: 760px;">
+        <div style="color: #75798c; font-size: 12.5px;">dna/dot-claude/skills/review-light/SKILL.md</div>
+        <div style="color: #595d6c;">---</div>
+        <div><span style="color: #9397ab;">name:</span> review-light</div>
+        <div><span style="color: #9397ab;">description:</span> Lightweight code review of the current changes.</div>
+        <div style="color: #595d6c;">---</div>
+        <div style="color: #b5abfc; margin-top: 8px;"># Review Light</div>
+        <div style="color: #9397ab;">Read <span style="color: #cfd3e5;">doc/en/guides/for-ai/ai-review-guide.md</span> and follow it.</div>
+      </div>
+      <p style="font-size: 15px; color: #75798c; margin: 22px 0 0; max-width: 720px;">{{ t.skillsNote }}</p>
+    </div>
+  </section>
+
+  <section id="vscode" style="background: linear-gradient(180deg, #262a60, #1d2050); border-top: 1px solid #4c5397; border-bottom: 1px solid #4c5397; padding: 76px 56px 84px;">
+    <div style="max-width: 1240px;">
+      <h2 style="font-size: 38px; font-weight: 500; margin: 0 0 14px; letter-spacing: -.01em; color: #f3f5fe;">{{ t.vscTitle }}</h2>
+      <p style="font-size: 17px; line-height: 1.65; color: #b5afe8; margin: 0 0 44px; max-width: 740px; text-wrap: pretty;">{{ t.vscLead }}</p>
+      <div style="display: grid; grid-template-columns: minmax(0,1.25fr) 76px minmax(0,1fr); gap: 20px; align-items: center;">
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <div style="background: rgba(22,24,38,.5); border-radius: 8px; box-shadow: 0 0 0 1px #4c5397; padding: 20px 24px; font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 1.85; color: #d2cefd; white-space: nowrap;">
+            <div style="color: #7972a9; font-size: 12.5px;">dna_base · dna/dot-vscode/settings.json</div>
+            <div>{ <span style="color: #b5abfc;">"files.eol"</span>: "\n" }</div>
+          </div>
+          <div style="background: rgba(22,24,38,.5); border-radius: 8px; box-shadow: 0 0 0 1px #4c5397; padding: 20px 24px; font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 1.85; color: #d2cefd; white-space: nowrap;">
+            <div style="color: #7972a9; font-size: 12.5px;">dna_dart · dna/dot-vscode/settings<span style="color: #d2cefd;">.overrides</span>.json</div>
+            <div>{ <span style="color: #b5abfc;">"editor.rulers"</span>: [80] }</div>
+          </div>
+          <div style="background: rgba(22,24,38,.5); border-radius: 8px; box-shadow: 0 0 0 1px #4c5397; padding: 20px 24px; font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 1.85; color: #d2cefd; white-space: nowrap;">
+            <div style="color: #7972a9; font-size: 12.5px;">{{ t.yourLayer }} · dna/dot-vscode/settings<span style="color: #d2cefd;">.overrides</span>.json</div>
+            <div>{ <span style="color: #b5abfc;">"editor.tabSize"</span>: 2 }</div>
+          </div>
+          <div style="background: rgba(22,24,38,.5); border-radius: 8px; box-shadow: 0 0 0 1px #4c5397; padding: 20px 24px; font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 1.85; color: #d2cefd; white-space: nowrap;">
+            <div style="color: #7972a9; font-size: 12.5px;">{{ t.yourLayer }} · dna/dot-vscode/extensions<span style="color: #d2cefd;">.overrides</span>.json</div>
+            <div>{ <span style="color: #b5abfc;">"recommendations+"</span>: ["eamodio.gitlens"] }</div>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: center; gap: 3px;">
+          <div style="width: 48px; height: 2px; background: linear-gradient(90deg, rgba(181,171,252,.3), #b5abfc);"></div>
+          <div style="width: 0; height: 0; border-left: 8px solid #b5abfc; border-top: 5px solid transparent; border-bottom: 5px solid transparent;"></div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <div style="background: rgba(22,24,38,.5); border-radius: 8px; box-shadow: 0 0 0 1px #4c5397; padding: 20px 24px; font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 1.85; color: #d2cefd; white-space: nowrap;">
+            <div style="color: #7972a9; font-size: 12.5px;">{{ t.instantiated }} · .vscode/settings.json</div>
+            <div>{</div>
+            <div style="padding-left: 1.4em;"><span style="color: #f3f5fe;">"files.eol"</span>: "\n",</div>
+            <div style="padding-left: 1.4em;"><span style="color: #f3f5fe;">"editor.rulers"</span>: [80],</div>
+            <div style="padding-left: 1.4em;"><span style="color: #f3f5fe;">"editor.tabSize"</span>: 2</div>
+            <div>}</div>
+          </div>
+          <div style="background: rgba(22,24,38,.5); border-radius: 8px; box-shadow: 0 0 0 1px #4c5397; padding: 20px 24px; font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 1.85; color: #d2cefd; white-space: nowrap;">
+            <div style="color: #7972a9; font-size: 12.5px;">{{ t.instantiated }} · .vscode/extensions.json</div>
+            <div>{ <span style="color: #f3f5fe;">"recommendations"</span>: [</div>
+            <div style="padding-left: 1.4em; color: #9690c9;">"dart-code.dart-code",</div>
+            <div style="padding-left: 1.4em; color: #f3f5fe;">"eamodio.gitlens"</div>
+            <div>] }</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="border-top: 1px solid #3f424d; padding: 74px 56px 30px; display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; flex-wrap: wrap;">
+    <div>
+      <h2 style="font-size: 34px; font-weight: 500; margin: 0 0 12px; letter-spacing: -.01em;">{{ t.outro }}</h2>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+        <a href="https://github.com/ggdna" style="display: flex; align-items: center; gap: 10px; border: 1px solid #9184d9; color: #b5abfc; border-radius: 8px; padding: 12px 20px; font-size: 15px;">
+          <svg width="17" height="17" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.07-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.4 7.4 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.15 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.55.74.55 1.5 0 1.07-.01 1.94-.01 2.21 0 .21.15.46.55.38A7.99 7.99 0 0 0 16 8c0-4.42-3.58-8-8-8Z"></path></svg>
+          GitHub
+        </a>
+        <a href="https://www.npmjs.com/search?q=ggdna" style="display: flex; align-items: center; gap: 10px; border: 1px solid #3f424d; color: #cfd3e5; border-radius: 8px; padding: 12px 20px; font-size: 15px;">
+          <svg width="17" height="17" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M0 4h16v8H8.5v-1.5H11V5.5H9.5v5H8V5.5H6.5v5H1.5V5.5H0V4Zm12.5 1.5v5H14v-5h-1.5Z"></path></svg>
+          npm
+        </a>
+        <a href="https://pub.dev/publishers/ggdna.com/packages" style="display: flex; align-items: center; gap: 10px; border: 1px solid #3f424d; color: #cfd3e5; border-radius: 8px; padding: 12px 20px; font-size: 15px;">
+          <svg width="17" height="17" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.5 14.5 5v6L8 14.5 1.5 11V5L8 1.5Z"></path><path d="M1.7 5 8 8.2 14.3 5M8 8.2v6.1"></path></svg>
+          pub.dev
+        </a>
+      </div>
+    </div>
+    <div style="font-size: 13px; color: #595d6c; line-height: 1.8;">
+      <div>MIT · © 2026 ggdna</div>
+      <div>github.com/ggdna/dna_base</div>
+    </div>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;lang&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;de&quot;,&quot;en&quot;],&quot;default&quot;:&quot;de&quot;,&quot;tsType&quot;:&quot;'de' | 'en'&quot;}}">
+const DE = {
+  navWhat: 'Möglichkeiten', navDnas: 'DNAs', navQuickstart: 'Quickstart', navCombine: 'Kombination',
+  navVars: 'Variablen', navOverrides: 'Overrides', navMarkdown: 'Markdown', navSkills: 'Skills',
+  heroTitle: 'Dein KI Skill Baukasten',
+  heroBody: 'DNA bündelt KI-Skills, Guides, Skripte und Konfigurationen. Jedes Projekt kann diese via Git, NPM oder pub.dev erben, kombinieren, überschreiben und neu veröffentlichen.',
+  ideaTitle: 'Die Idee',
+  ideaLead: 'Einzelne DNAs tragen je ein Stück Wissen. Beim Instanziieren fügen sie sich zu einem Ganzen zusammen — dem Erbgut Deines Repos.',
+  ideaCaption: 'Eine kombinierte DNA — aus sechs Bestandteilen instanziiert.',
+  navIdea: 'Die Idee',
+  whatTitle: 'Möglichkeiten',
+  whatLead: 'Es gibt vielfältige Möglichkeiten, DNA zu verarbeiten.',
+  verbs: [
+    { title: 'Erzeugen', title2: '& Teilen', body: 'Erstelle in wenigen Schritten eigene DNA-Repos mit Guides, Skills, Skripten und Configs.' },
+    { title: 'Erben', title2: '& Kombinieren', body: 'Übernimm eine existierende DNA als Dev-Dependency — und kombiniere existierende DNAs zu einer eigenen DNA.' },
+    { title: 'Bearbeiten', title2: '& Anpassen', body: 'Überschreibe Teile einer geerbten Basis. Nutze Variablen, um eine bestehende DNA gezielt an Dein Projekt anzupassen.' },
+    { title: 'Reviewen', title2: '& Sichern', body: 'Die kombinierte DNA landet ganz normal in Deinem Projekt. Sichte alle Änderungen im Review. Vermeide Prompt Injections.' },
+  ],
+  dnasTitle: 'Vorhandene DNAs',
+  dnasLead: 'Unsere Basis DNAs: Jede kümmert sich um eine Sache. Dein Projekt erbt und kombiniert genau das, was es braucht.',
+  fragments: [
+    { name: 'dna_readme', body: 'README-Struktur und Vorlagen', tag: 'Doku' },
+    { name: 'dna_translate', body: 'Mehrsprachigkeit, de und en synchron', tag: 'Doku' },
+    { name: 'dna_blog', body: 'Blog-Format, Vorlagen, Ablage', tag: 'Doku' },
+    { name: 'dna_guides', body: 'Entwickler- und KI-Guides', tag: 'Wissen' },
+    { name: 'dna_index', body: 'Index- und Navigationsdateien', tag: 'Struktur' },
+    { name: 'dna_gg', body: 'gg-Workflow: Commit, Push, Release', tag: 'Workflow' },
+  ],
+  qsTitle: 'Schritt für Schritt',
+  qsLead: 'So erstellst Du eigene DNA oder bindest existierende in Dein Projekt ein — mit npm oder dart.',
+  cliTitles: ['Installiere das gg CLI', 'Lege einen neuen DNA Ordner an', 'Wechsle in den Ordner', 'Initialisiere die DNA', 'Erbe vorhandene DNA', 'Füge eigene DNA hinzu', 'Baue die kombinierte DNA', 'Veröffentliche Deine DNA'],
+  demoTitle: 'So funktioniert DNA Kombination',
+  demoLead: 'Die Ordnerstrukturen in den DNA-Ordnern werden durch gg dna build kombiniert und in das Hauptverzeichnis des Zielprojektes instanziiert.',
+  varsTitle: 'Variablen',
+  varsLead: 'Jede DNA bringt ihre eigenen Variablen mit — sie beginnen alle mit dem Präfix dna. In der dna/_vars.json belegst Du sie mit Werten und ersetzt so die Bezeichner aus der DNA durch Deine eigenen. Jeder String, der mit dna beginnt, kommt dabei als Variable in Betracht und kann ersetzt werden — egal in welcher Datei er steht.',
+  licInstantiated: 'LICENSE, instanziiert',
+  yourLayer: 'Dein Layer', instantiated: 'instanziiert',
+  ovTitle: 'Overrides',
+  ovLead: 'Höhere Layer gewinnen bei Pfadkollisionen — gleichnamige Dateien ersetzen die geerbte Version. Statt zu ersetzen kann ein Layer die Datei auch feldweise patchen.',
+  ovReplaceLabel: 'Ersetzen — höherer Layer gewinnt',
+  ovMergeLabel: 'Mischen — .overrides.json',
+  ovBaseRelease: 'Standard-Release der Familie',
+  ovYourRelease: 'euer Release mit Signatur',
+  jsonOps: [
+    { code: '"key": null', body: 'löscht den geerbten Schlüssel' },
+    { code: '"key!": …', body: 'ersetzt den Wert ohne Merge' },
+    { code: '"key+": […]', body: 'hängt an ein Array an, dedupliziert' },
+    { code: 'Objekte', body: 'werden tief gemischt, Skalare ersetzt' },
+  ],
+  mdTitle: 'Markdown',
+  mdLead: 'Markdown-Dateien, z.B. für Guides und Skills, müssen nicht zwingend komplett ersetzt werden — sie können auch durch Verwendung der Endung .override.md gepatcht werden. Die geerbte Datei markiert selbst, was austauschbar ist.',
+  mdOps: [
+    { code: '## @title Titel', body: 'markiert einen ganzen Abschnitt als ersetzbar' },
+    { code: 'dnaInstallVia', body: 'definiert inline eine Variable, die über dna/_vars.json mit Werten belegt wird' },
+  ],
+  skillsTitle: 'Skills',
+  skillsLead: 'Ein Skill ist nur ein Ordner mit einer SKILL.md. Legst Du ihn unter dna/dot-claude/skills/ ab, landet er beim Instanziieren als .claude/skills/ in jedem Projekt, das Deine DNA erbt.',
+  skillsNote: 'Skills werden wie jede andere DNA-Datei behandelt: dna-Variablen werden gefüllt, gleichnamige Skills eines höheren Layers gewinnen, und .override.md patcht einen geerbten Skill statt ihn zu ersetzen.',
+  vscTitle: 'VS Code',
+  vscLead: 'Auch VS-Code-Konfigurationen, z.B. für Einstellungen, Erweiterungen oder Code Snippets, können als DNA zur Verfügung gestellt und im eigenen Projekt frei kombiniert werden.',
+  navVscode: 'VS Code',
+  outro: '🧬 Viel Freude mit DNA!',
+  demoFrom: ['aus dna_readme', 'aus dna_blog'],
+};
+
+const EN = {
+  navWhat: 'What you can do', navDnas: 'DNAs', navQuickstart: 'Quickstart', navCombine: 'Combination',
+  navVars: 'Variables', navOverrides: 'Overrides', navMarkdown: 'Markdown', navSkills: 'Skills',
+  heroTitle: 'Your AI skill toolkit',
+  heroBody: 'DNA bundles AI skills, guides, scripts and configuration. Any project can inherit them via Git, NPM or pub.dev — combine, override and publish them again.',
+  ideaTitle: 'The idea',
+  ideaLead: 'Each DNA carries one piece of knowledge. On instantiation they assemble into a whole — the genome of your repo.',
+  ideaCaption: 'One combined DNA — instantiated from six parts.',
+  navIdea: 'The idea',
+  whatTitle: 'What you can do',
+  whatLead: 'There are many ways to work with DNA.',
+  verbs: [
+    { title: 'Create', title2: '& share', body: 'Set up your own DNA repos in a few steps — with guides, skills, scripts and configs.' },
+    { title: 'Inherit', title2: '& combine', body: 'Take an existing DNA as a dev dependency — and combine several DNAs into one of your own.' },
+    { title: 'Edit', title2: '& adapt', body: 'Override parts of an inherited base. Use variables to tailor an existing DNA to your project.' },
+    { title: 'Review', title2: '& secure', body: 'The combined DNA lands in your project like any other file. Inspect every change in review. Avoid prompt injections.' },
+  ],
+  dnasTitle: 'Available DNAs',
+  dnasLead: 'Our base DNAs: each one takes care of a single concern. Your project inherits and combines exactly what it needs.',
+  fragments: [
+    { name: 'dna_readme', body: 'README structure and templates', tag: 'Docs' },
+    { name: 'dna_translate', body: 'Multi-language docs, de and en in sync', tag: 'Docs' },
+    { name: 'dna_blog', body: 'Blog format, templates, layout', tag: 'Docs' },
+    { name: 'dna_guides', body: 'Developer and AI guides', tag: 'Knowledge' },
+    { name: 'dna_index', body: 'Index and navigation files', tag: 'Structure' },
+    { name: 'dna_gg', body: 'gg workflow: commit, push, release', tag: 'Workflow' },
+  ],
+  qsTitle: 'Step by step',
+  qsLead: 'How to create your own DNA or pull an existing one into your project.',
+  cliTitles: ['Install the gg CLI', 'Create a new DNA folder', 'Enter the folder', 'Initialize the DNA', 'Inherit an existing DNA', 'Add your own DNA', 'Build the combined DNA', 'Publish your DNA'],
+  demoTitle: 'How DNA combination works',
+  demoLead: 'The folder structures inside the DNA folders are combined by gg dna build and instantiated into the root of the target project.',
+  varsTitle: 'Variables',
+  varsLead: 'Every DNA ships its own variables — all of them start with the prefix dna. In dna/_vars.json you assign values and replace the identifiers coming from the DNA with your own. Any string starting with dna is considered a variable and can be replaced — no matter which file it sits in.',
+  licInstantiated: 'LICENSE, instantiated',
+  yourLayer: 'Your layer', instantiated: 'instantiated',
+  ovTitle: 'Overrides',
+  ovLead: 'Higher layers win on path collisions — a file of the same name replaces the inherited version. Instead of replacing, a layer can also patch the file field by field.',
+  ovReplaceLabel: 'Replace — the higher layer wins',
+  ovMergeLabel: 'Merge — .overrides.json',
+  ovBaseRelease: 'the family default release',
+  ovYourRelease: 'your signed release',
+  jsonOps: [
+    { code: '"key": null', body: 'deletes the inherited key' },
+    { code: '"key!": …', body: 'replaces the value without merging' },
+    { code: '"key+": […]', body: 'appends to an array, deduplicated' },
+    { code: 'Objects', body: 'are deep merged, scalars replaced' },
+  ],
+  mdTitle: 'Markdown',
+  mdLead: 'Markdown files — guides and skills, for instance — do not have to be replaced entirely. Using the extension .override.md they can be patched instead. The inherited file marks itself what is exchangeable.',
+  mdOps: [
+    { code: '## @title Title', body: 'marks a whole section as replaceable' },
+    { code: 'dnaInstallVia', body: 'declares a variable inline that gets its value from dna/_vars.json' },
+  ],
+  skillsTitle: 'Skills',
+  skillsLead: 'A skill is just a folder holding a SKILL.md. Put it under dna/dot-claude/skills/ and it is instantiated as .claude/skills/ in every project inheriting your DNA.',
+  skillsNote: 'Skills are treated like any other DNA file: dna variables get filled in, a same-named skill from a higher layer wins, and .override.md patches an inherited skill instead of replacing it.',
+  vscTitle: 'VS Code',
+  vscLead: 'Configuration does not have to be inherited as a whole. Every layer brings its own piece, and JSON merging assembles a complete settings.json and extensions.json from them — objects are deep merged, "recommendations+" appends to the inherited array.',
+  navVscode: 'VS Code',
+  outro: '🧬 Enjoy your DNA!',
+  demoFrom: ['from dna_readme', 'from dna_blog'],
+};
+
+class Component extends DCLogic {
+  state = { lang: null };
+
+  componentDidMount() {
+    let stored = null;
+    try { stored = localStorage.getItem('dna-landing-lang'); } catch (e) {}
+    if (stored === 'de' || stored === 'en') this.setState({ lang: stored });
+  }
+
+  setLang(lang) {
+    try { localStorage.setItem('dna-landing-lang', lang); } catch (e) {}
+    this.setState({ lang });
+  }
+
+  renderVals() {
+    const lang = this.state.lang || this.props.lang || 'de';
+    const t = lang === 'en' ? EN : DE;
+    const ideaParts = ['dna_readme', 'dna_translate', 'dna_blog', 'dna_guides', 'dna_index', 'dna_gg']
+      .map((name, i) => ({ name, d: (i * 0.24).toFixed(2) + 's' }));
+    const ideaHelix = [];
+    for (let i = 0; i < 6; i++) ideaHelix.push({ appear: (i * 0.24).toFixed(2) + 's' });
+    const helix = [];
+    for (let i = 0; i < 26; i++) helix.push({ d: (-i * 0.13).toFixed(2) + 's' });
+    const cmds = [
+      ['npm install -g ggjs', 'dart pub global activate gg'],
+      ['mkdir ~/dev/dna_new', 'mkdir ~/dev/dna_new'],
+      ['cd ~/dev/dna_new', 'cd ~/dev/dna_new'],
+      ['ggjs dna init', 'gg dna init'],
+      ['ggjs dna add @ggdna/readme', 'gg dna add dna_readme'],
+      ['code dna/my-dna.md', 'code dna/my-dna.md'],
+      ['ggjs dna build', 'gg dna build'],
+      ['npm publish', 'dart pub publish'],
+    ];
+    const on = { bg: 'rgba(145,132,217,.22)', fg: '#d2cefd' };
+    const off = { bg: 'transparent', fg: '#75798c' };
+    const de = lang === 'de' ? on : off;
+    const en = lang === 'en' ? on : off;
+    return {
+      t, helix, ideaParts, ideaHelix,
+      verbs: t.verbs,
+      fragments: t.fragments,
+      jsonOps: t.jsonOps,
+      mdOps: t.mdOps,
+      cli: t.cliTitles.map((title, i) => ({
+        n: String(i + 1).padStart(2, '0'), title, npm: cmds[i][0], dart: cmds[i][1],
+      })),
+      demoSources: [
+        { name: 'dna_readme', file: 'readme-guide.md', d: '0s' },
+        { name: 'dna_blog', file: 'blog-guide.md', d: '.9s' },
+      ],
+      demoOut: [
+        { branch: '├─', file: 'readme-guide.md', from: t.demoFrom[0] },
+        { branch: '└─', file: 'blog-guide.md', from: t.demoFrom[1] },
+      ],
+      deBg: de.bg, deFg: de.fg, enBg: en.bg, enFg: en.fg,
+      setDe: () => this.setLang('de'),
+      setEn: () => this.setLang('en'),
+    };
+  }
+}
+</script>
+</body>
+</html>
