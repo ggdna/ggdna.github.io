@@ -55,7 +55,7 @@
         <button type="button" onClick="{{ setDe }}" style="border: 0; background: {{ deBg }}; color: {{ deFg }}; border-radius: 6px; padding: 5px 11px; font: inherit; cursor: pointer;">DE</button>
         <button type="button" onClick="{{ setEn }}" style="border: 0; background: {{ enBg }}; color: {{ enFg }}; border-radius: 6px; padding: 5px 11px; font: inherit; cursor: pointer;">EN</button>
       </div>
-      <a href="https://github.com/ggdna/dna_base" style="border: 1px solid #9184d9; color: #b5abfc; border-radius: 8px; padding: 7px 14px;">GitHub</a>
+      <a href="https://github.com/ggsuite/dna_base" style="border: 1px solid #9184d9; color: #b5abfc; border-radius: 8px; padding: 7px 14px;">GitHub</a>
     </nav>
   </header>
 
@@ -98,10 +98,10 @@
       <h2 style="font-size: 38px; font-weight: 500; margin: 0 0 14px; letter-spacing: -.01em;">{{ t.dnasTitle }}</h2>
       <p style="font-size: 17px; color: #75798c; margin: 0 0 40px; max-width: 640px;">{{ t.dnasLead }}</p>
       <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;">
-        <sc-for list="{{ fragments }}" as="fr" hint-placeholder-count="6">
+        <sc-for list="{{ fragments }}" as="fr" hint-placeholder-count="10">
           <div style="background: #232532; border-radius: 8px; box-shadow: 0 0 0 1px #3f424d; padding: 22px 24px;" style-hover="box-shadow: 0 0 0 1px #5d5294, 0 0 30px rgba(145,132,217,.14);">
             <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 8px;">
-              <span style="font-family: 'JetBrains Mono', monospace; font-size: 17px; color: #b5abfc;">{{ fr.name }}</span>
+              <a href="{{ fr.url }}" target="_blank" rel="noreferrer" style="font-family: 'JetBrains Mono', monospace; font-size: 17px; color: #b5abfc; text-decoration: none;" style-hover="text-decoration: underline;">{{ fr.name }}</a>
               <span style="font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: #595d6c;">{{ fr.tag }}</span>
             </div>
             <div style="font-size: 14.5px; line-height: 1.55; color: #9397ab;">{{ fr.body }}</div>
@@ -416,7 +416,7 @@
     </div>
     <div style="font-size: 13px; color: #595d6c; line-height: 1.8;">
       <div>MIT · © 2026 ggdna</div>
-      <div>github.com/ggdna/dna_base</div>
+      <div>github.com/ggsuite/dna_base</div>
     </div>
   </section>
 </div>
@@ -442,12 +442,16 @@ const DE = {
   dnasTitle: 'Vorhandene DNAs',
   dnasLead: 'Unsere Basis DNAs: Jede kümmert sich um eine Sache. Dein Projekt erbt und kombiniert genau das, was es braucht.',
   fragments: [
-    { name: 'dna_readme', body: 'README-Struktur und Vorlagen', tag: 'Doku' },
-    { name: 'dna_translate', body: 'Mehrsprachigkeit, de und en synchron', tag: 'Doku' },
-    { name: 'dna_blog', body: 'Blog-Format, Vorlagen, Ablage', tag: 'Doku' },
-    { name: 'dna_guides', body: 'Entwickler- und KI-Guides', tag: 'Wissen' },
-    { name: 'dna_index', body: 'Index- und Navigationsdateien', tag: 'Struktur' },
-    { name: 'dna_gg', body: 'gg-Workflow: Commit, Push, Release', tag: 'Workflow' },
+    { name: 'dna_readme', body: 'README-Struktur und Vorlagen', tag: 'Doku', url: 'https://github.com/ggdna/dna_readme' },
+    { name: 'dna_translate', body: 'Mehrsprachigkeit, de und en synchron', tag: 'Doku', url: 'https://github.com/ggdna/dna_translate' },
+    { name: 'dna_blog', body: 'Blog-Format, Vorlagen, Ablage', tag: 'Doku', url: 'https://github.com/ggdna/dna_blog' },
+    { name: 'dna_guides', body: 'Entwickler- und KI-Guides', tag: 'Wissen', url: 'https://github.com/ggdna/dna_guides' },
+    { name: 'dna_index', body: 'Index- und Navigationsdateien', tag: 'Struktur', url: 'https://github.com/ggdna/dna_index' },
+    { name: 'dna_install', body: 'Install-Guides: Editor, Node, Azure, Tooling', tag: 'Setup', url: 'https://github.com/ggdna/dna_install' },
+    { name: 'dna_gg', body: 'gg-Workflow: Commit, Push, Release', tag: 'Workflow', url: 'https://github.com/ggdna/dna_gg' },
+    { name: 'dna_base', body: 'Gemeinsame Basis: Configs, Doku, Skripte, Skills', tag: 'Basis', url: 'https://github.com/ggsuite/dna_base' },
+    { name: 'dna_dart', body: 'Die DNA aller unserer Dart-Projekte', tag: 'Basis', url: 'https://github.com/ggdna/dna_dart' },
+    { name: 'dna-ts', body: 'Die DNA aller unserer TypeScript-Projekte', tag: 'Basis', url: 'https://github.com/ggdna/dna-ts' },
   ],
   qsTitle: 'Schritt für Schritt',
   qsLead: 'So erstellst Du eigene DNA oder bindest existierende in Dein Projekt ein — mit npm oder dart.',
@@ -506,12 +510,16 @@ const EN = {
   dnasTitle: 'Available DNAs',
   dnasLead: 'Our base DNAs: each one takes care of a single concern. Your project inherits and combines exactly what it needs.',
   fragments: [
-    { name: 'dna_readme', body: 'README structure and templates', tag: 'Docs' },
-    { name: 'dna_translate', body: 'Multi-language docs, de and en in sync', tag: 'Docs' },
-    { name: 'dna_blog', body: 'Blog format, templates, layout', tag: 'Docs' },
-    { name: 'dna_guides', body: 'Developer and AI guides', tag: 'Knowledge' },
-    { name: 'dna_index', body: 'Index and navigation files', tag: 'Structure' },
-    { name: 'dna_gg', body: 'gg workflow: commit, push, release', tag: 'Workflow' },
+    { name: 'dna_readme', body: 'README structure and templates', tag: 'Docs', url: 'https://github.com/ggdna/dna_readme' },
+    { name: 'dna_translate', body: 'Multi-language docs, de and en in sync', tag: 'Docs', url: 'https://github.com/ggdna/dna_translate' },
+    { name: 'dna_blog', body: 'Blog format, templates, layout', tag: 'Docs', url: 'https://github.com/ggdna/dna_blog' },
+    { name: 'dna_guides', body: 'Developer and AI guides', tag: 'Knowledge', url: 'https://github.com/ggdna/dna_guides' },
+    { name: 'dna_index', body: 'Index and navigation files', tag: 'Structure', url: 'https://github.com/ggdna/dna_index' },
+    { name: 'dna_install', body: 'Install guides: editor, node, Azure, tooling', tag: 'Setup', url: 'https://github.com/ggdna/dna_install' },
+    { name: 'dna_gg', body: 'gg workflow: commit, push, release', tag: 'Workflow', url: 'https://github.com/ggdna/dna_gg' },
+    { name: 'dna_base', body: 'The shared base: configs, docs, scripts, skills', tag: 'Foundation', url: 'https://github.com/ggsuite/dna_base' },
+    { name: 'dna_dart', body: 'The DNA of all our Dart projects', tag: 'Foundation', url: 'https://github.com/ggdna/dna_dart' },
+    { name: 'dna-ts', body: 'The DNA of all our TypeScript projects', tag: 'Foundation', url: 'https://github.com/ggdna/dna-ts' },
   ],
   qsTitle: 'Step by step',
   qsLead: 'How to create your own DNA or pull an existing one into your project.',
