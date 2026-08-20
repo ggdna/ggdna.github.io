@@ -602,7 +602,7 @@ class Component extends DCLogic {
     const helix = [];
     for (let i = 0; i < 26; i++) helix.push({ d: (-i * 0.13).toFixed(2) + 's' });
     const cmds = [
-      ['npm install -g ggwsm', 'dart pub global activate gg'],
+      ['npm install -g @tssuite/ggwsm', 'dart pub global activate gg'],
       ['mkdir ~/dev/dna_new', 'mkdir ~/dev/dna_new'],
       ['cd ~/dev/dna_new', 'cd ~/dev/dna_new'],
       ['ggwsm dna init', 'gg dna init'],
