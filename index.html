@@ -26,6 +26,15 @@
   @keyframes colIn { 0% { opacity: 0; transform: translateX(-26px) } 10%,88% { opacity: 1; transform: translateX(0) } 100% { opacity: 0; transform: translateX(-26px) } }
   @keyframes layerPulse { 0%,100% { box-shadow: 0 0 0 1px #3f424d } 50% { box-shadow: 0 0 0 1px #5d5294, 0 0 24px rgba(145,132,217,.18) } }
   @keyframes srcGlow { 0%,10% { box-shadow: 0 0 0 1px #3f424d } 22%,80% { box-shadow: 0 0 0 1px #5d5294, 0 0 26px rgba(145,132,217,.16) } 92%,100% { box-shadow: 0 0 0 1px #3f424d } }
+  .nav-dd { position: relative; }
+  .nav-dd-btn { border: 0; background: transparent; color: #b2b6ca; font: inherit; cursor: pointer; padding: 0; display: flex; align-items: center; gap: 6px; }
+  .nav-dd-btn:hover { color: #d2cefd; }
+  .nav-dd-caret { font-size: 10px; color: #75798c; }
+  .nav-dd-panel { position: absolute; top: 100%; right: -12px; padding-top: 12px; display: none; z-index: 20; }
+  .nav-dd:hover .nav-dd-panel, .nav-dd:focus-within .nav-dd-panel { display: block; }
+  .nav-dd-box { display: flex; flex-direction: column; background: #232532; border: 1px solid #3f424d; border-radius: 8px; padding: 6px; min-width: 190px; box-shadow: 0 16px 38px rgba(0,0,0,.45); }
+  .nav-dd-box a { color: #b2b6ca; font-size: 14px; padding: 9px 14px; border-radius: 6px; white-space: nowrap; }
+  .nav-dd-box a:hover { background: rgba(145,132,217,.14); color: #d2cefd; }
 </style>
 </helmet>
 
@@ -45,12 +54,19 @@
       <a href="#konzept" style="color: #b2b6ca;">{{ t.navWhat }}</a>
       <a href="#fragmente" style="color: #b2b6ca;">{{ t.navDnas }}</a>
       <a href="#kombination" style="color: #b2b6ca;">{{ t.navQuickstart }}</a>
-      <a href="#demo" style="color: #b2b6ca;">{{ t.navCombine }}</a>
-      <a href="#variablen" style="color: #b2b6ca;">{{ t.navVars }}</a>
-      <a href="#overrides" style="color: #b2b6ca;">{{ t.navOverrides }}</a>
-      <a href="#markdown" style="color: #b2b6ca;">{{ t.navMarkdown }}</a>
-      <a href="#skills" style="color: #b2b6ca;">{{ t.navSkills }}</a>
-      <a href="#vscode" style="color: #b2b6ca;">{{ t.navVscode }}</a>
+      <div class="nav-dd">
+        <button type="button" class="nav-dd-btn">{{ t.navRef }}<span class="nav-dd-caret">▾</span></button>
+        <div class="nav-dd-panel">
+          <div class="nav-dd-box">
+            <a href="#demo">{{ t.navCombine }}</a>
+            <a href="#variablen">{{ t.navVars }}</a>
+            <a href="#overrides">{{ t.navOverrides }}</a>
+            <a href="#markdown">{{ t.navMarkdown }}</a>
+            <a href="#skills">{{ t.navSkills }}</a>
+            <a href="#vscode">{{ t.navVscode }}</a>
+          </div>
+        </div>
+      </div>
       <div style="display: flex; align-items: center; gap: 2px; border: 1px solid #3f424d; border-radius: 8px; padding: 3px; font-size: 13px;">
         <button type="button" onClick="{{ setDe }}" style="border: 0; background: {{ deBg }}; color: {{ deFg }}; border-radius: 6px; padding: 5px 11px; font: inherit; cursor: pointer;">DE</button>
         <button type="button" onClick="{{ setEn }}" style="border: 0; background: {{ enBg }}; color: {{ enFg }}; border-radius: 6px; padding: 5px 11px; font: inherit; cursor: pointer;">EN</button>
@@ -425,6 +441,7 @@
 const DE = {
   navWhat: 'Möglichkeiten', navDnas: 'DNAs', navQuickstart: 'Quickstart', navCombine: 'Kombination',
   navVars: 'Variablen', navOverrides: 'Overrides', navMarkdown: 'Markdown', navSkills: 'Skills',
+  navRef: 'Referenz',
   heroTitle: 'Baue und Teile KI Skills',
   heroBody: 'DNA bündelt KI-Skills, Guides, Skripte und Konfigurationen. Jedes Projekt kann diese via Git, NPM oder pub.dev erben, kombinieren, überschreiben und neu veröffentlichen.',
   ideaTitle: 'Die Idee',
@@ -494,6 +511,7 @@ const DE = {
 const EN = {
   navWhat: 'What you can do', navDnas: 'DNAs', navQuickstart: 'Quickstart', navCombine: 'Combination',
   navVars: 'Variables', navOverrides: 'Overrides', navMarkdown: 'Markdown', navSkills: 'Skills',
+  navRef: 'Reference',
   heroTitle: 'Distribute AI skills',
   heroBody: 'DNA bundles AI skills, guides, scripts and configuration. Any project can inherit them via Git, NPM or pub.dev — combine, override and publish them again.',
   ideaTitle: 'The idea',
