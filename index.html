@@ -114,7 +114,7 @@
       <h2 style="font-size: 38px; font-weight: 500; margin: 0 0 14px; letter-spacing: -.01em;">{{ t.dnasTitle }}</h2>
       <p style="font-size: 17px; color: #75798c; margin: 0 0 40px; max-width: 640px;">{{ t.dnasLead }}</p>
       <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;">
-        <sc-for list="{{ fragments }}" as="fr" hint-placeholder-count="11">
+        <sc-for list="{{ fragments }}" as="fr" hint-placeholder-count="12">
           <div style="background: #232532; border-radius: 8px; box-shadow: 0 0 0 1px #3f424d; padding: 22px 24px;" style-hover="box-shadow: 0 0 0 1px #5d5294, 0 0 30px rgba(145,132,217,.14);">
             <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 8px;">
               <a href="{{ fr.url }}" target="_blank" rel="noreferrer" style="font-family: 'JetBrains Mono', monospace; font-size: 17px; color: #b5abfc; text-decoration: none;" style-hover="text-decoration: underline;">{{ fr.name }}</a>
@@ -467,6 +467,7 @@ const DE = {
     { name: 'dna_scripts', body: 'Node-Skripte fürs Repo: Setup, Release, Aufräumen', tag: 'Automatisierung', url: 'https://github.com/ggdna/dna_scripts' },
     { name: 'dna_install', body: 'Install-Guides: Editor, Node, Azure, Tooling', tag: 'Setup', url: 'https://github.com/ggdna/dna_install' },
     { name: 'dna_vscode', body: 'VS-Code-Einstellungen und Extensions', tag: 'Editor', url: 'https://github.com/ggdna/dna_vscode' },
+    { name: 'dna_clean_code', body: 'Clean-Code- und Test-Regeln, sprachneutral plus Dart und TypeScript', tag: 'Qualität', url: 'https://github.com/ggdna/dna_clean_code' },
     { name: 'dna_gg', body: 'gg-Workflow: Commit, Push, Release', tag: 'Workflow', url: 'https://github.com/ggdna/dna_gg' },
     { name: 'dna_dart', body: 'Die DNA aller unserer Dart-Projekte', tag: 'Basis', url: 'https://github.com/ggdna/dna_dart' },
     { name: 'dna-ts', body: 'Die DNA aller unserer TypeScript-Projekte', tag: 'Basis', url: 'https://github.com/ggdna/dna-ts' },
@@ -537,6 +538,7 @@ const EN = {
     { name: 'dna_scripts', body: 'Node scripts for the repo: setup, release, cleanup', tag: 'Automation', url: 'https://github.com/ggdna/dna_scripts' },
     { name: 'dna_install', body: 'Install guides: editor, node, Azure, tooling', tag: 'Setup', url: 'https://github.com/ggdna/dna_install' },
     { name: 'dna_vscode', body: 'VS Code settings and extensions', tag: 'Editor', url: 'https://github.com/ggdna/dna_vscode' },
+    { name: 'dna_clean_code', body: 'Clean code and test rules, language neutral plus Dart and TypeScript', tag: 'Quality', url: 'https://github.com/ggdna/dna_clean_code' },
     { name: 'dna_gg', body: 'gg workflow: commit, push, release', tag: 'Workflow', url: 'https://github.com/ggdna/dna_gg' },
     { name: 'dna_dart', body: 'The DNA of all our Dart projects', tag: 'Foundation', url: 'https://github.com/ggdna/dna_dart' },
     { name: 'dna-ts', body: 'The DNA of all our TypeScript projects', tag: 'Foundation', url: 'https://github.com/ggdna/dna-ts' },
