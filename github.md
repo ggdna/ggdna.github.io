@@ -1,4 +1,4 @@
-repo: ggsuite/dna_base
+repo: ggdna/dna_ggdna
 branch: main
 
 ## Last sync
@@ -16,10 +16,10 @@ commit: 05ff59805c28
 
 | Screen | Repo files |
 | --- | --- |
-| DNA Landing.dc.html | dna_base: README.de.md, dna/_dna.json, dna/_vars.json, dna/dot-claude/skills/review-light/SKILL.md · helix: doc/guides/dna.md |
-| DNA Vortrag.dc.html | dna_base: README.de.md, doc/de/guides/dna-guide.md, dna/CLAUDE.md |
+| DNA Landing.dc.html | dna_ggdna: README.md, dna/_dna.json, dna/_vars.json · dna_gg: dna/dot-claude/skills/publish/SKILL.md · helix: doc/guides/dna.md |
+| DNA Vortrag.dc.html | dna_ggdna: README.md · helix: README.md, doc/guides/dna.md, doc/guides/claude-code.md |
 
-Nebenquelle: ggsuite/helix (doc/guides/dna.md) — Override- und Variablen-Semantik.
+Nebenquelle: ggdna/helix (doc/guides/dna.md) — Override- und Variablen-Semantik.
 
 ## Sync history
 
